@@ -6,7 +6,6 @@ class HTML::Pipeline::MarkdownRewriteFilterTest < Minitest::Test
     def header(node)
       text = node.first_child.string_content
       level = node.header_level
-      # puts node.methods
       result = <<~DOC
       {level: #{level}, text: #{text}}
       #{node.to_commonmark}
